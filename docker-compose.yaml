@@ -1,0 +1,20 @@
+services:
+  slapd:
+    image: slapd
+    volumes:
+      - sockets:/sockets
+      - ./entrypoint.d:/docker-entrypoint.d
+
+  socketlogger:
+    image: docker.io/python:3.11
+    environment:
+      SLAPO_SOCKET_PATH: /sockets/logger.sock
+    volumes:
+      - ./socketlogger:/app/socketlogger/
+      - sockets:/sockets
+    command:
+      - python3
+      - /app/socketlogger/socketlogger.py
+
+volumes:
+  sockets:

@@ -1,0 +1,18 @@
+#dn: cn=olcSocketSchema,cn=schema,cn=config
+#objectClass: olcSchemaConfig
+#cn: olcSocketSchema
+#olcAttributeTypes: ( OLcfgDbAt:7.3 NAME 'olcOvSocketOps' DESC 'Operation typ
+# es to forward' EQUALITY caseIgnoreMatch SYNTAX OMsDirectoryString )
+#olcAttributeTypes: ( OLcfgDbAt:7.4 NAME 'olcOvSocketResps' DESC 'Response ty
+# pes to forward' EQUALITY caseIgnoreMatch SYNTAX OMsDirectoryString )
+#olcAttributeTypes: ( OLcfgDbAt:7.1 NAME 'olcDbSocketPath' DESC 'Pathname for
+#  Unix domain socket' EQUALITY caseExactMatch SYNTAX OMsDirectoryString SING
+# LE-VALUE )
+#olcAttributeTypes: ( OLcfgDbAt:7.2 NAME 'olcDbSocketExtensions' DESC 'binddn
+# , peername, or ssf' EQUALITY caseIgnoreMatch SYNTAX OMsDirectoryString )
+#olcObjectClasses: ( OLcfgDbOc:7.2 NAME 'olcOvSocketConfig' DESC 'Socket over
+# lay configuration' SUP olcOverlayConfig STRUCTURAL MUST olcDbSocketPath MAY
+#  ( olcDbSocketExtensions $ olcOvSocketOps $ olcOvSocketResps ) )
+#olcObjectClasses: ( OLcfgDbOc:7.1 NAME 'olcDbSocketConfig' DESC 'Socket back
+# end configuration' SUP olcDatabaseConfig STRUCTURAL MUST olcDbSocketPath MA
+# Y olcDbSocketExtensions )
